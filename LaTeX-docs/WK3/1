@@ -31,22 +31,17 @@
 \end{description}
 \end{posterbox}
 \begin{posterbox}[column=0,below=auto,textborder=rounded]{Fetch Execute Cycle}
-\begin{center}
 \includegraphics[scale=0.5]{fetchExCycle.png}
-\end{center}
 \end{posterbox}
-\begin{posterbox}[column=1]{R-Type Instruction Classes}
-\begin{center}
+\begin{posterbox}[column=1]{Instruction Classes}
+\textbf{R-TYPE}
 \begin{tabular}{|l |c|c|c|c|c|c|}
 \hline
 Field & 0 & rs & rt & rd & ShiftAmt & funct\\\hline
 Bit Positions &31:26&25:21&20:16&15:11&10:6&5:0\\\hline
 \end{tabular}
-\end{center}
-\end{posterbox}
-
-\begin{posterbox}[column=1,below=auto]{Some R-Type Math Instructions}
-\begin{center}
+\\
+\textbf{Some Math Instructions}
 \begin{tabular}{|c|c|c|c|}
 \hline
 instruction & opcode & function & func base 2\\\hline
@@ -57,34 +52,17 @@ or & 0 & 37& 100101 \\\hline
 slt & 0 & 42 & 101010 \\\hline
 
 \end{tabular}
-\end{center}
-\end{posterbox}
-\begin{posterbox}[column=1,below=auto]{R-Type Example}
-\begin{center}
-\begin{tabular}{|c|c|c|c|c|c|}
-\hline
+\\
+\textbf{Example}
+\begin{tabular}{|c|c|c|c|c|c|}\hline
 Opcode & rs & rt & rd & ShiftAmt & funct\\\hline
 add & \$17 & \$18 & \$9 & N/A & 32\\\hline
 000000 & 10001 & 10010 & 01001 & 00000 & 100000\\\hline
 6 bits & 5 bits & 5 bits & 5 bits & 5 bits & 6 bits\\\hline 
 \end{tabular}
-\end{center}
-\end{posterbox}
-\begin{posterbox}[column=1,below=auto]{R-Type in datapath}
-\begin{center}
-\begin{tikzpicture}
-  \tikzstyle{mux} = [ trapezium,   draw,   
-                    shape border rotate = 270, trapezium angle = 60,  
-                    inner ysep=0pt, outer sep=1pt, inner xsep=1pt, 
-                    text width = 3em, 
-                    node distance=3cm, font=\large ]
 
- \node [mux] {0\\1};
-\end{tikzpicture}
-\end{center}
 \end{posterbox}
-\begin{posterbox}[column=2,textborder=rounded]{ALU control lines}
-\begin{center}
+\begin{posterbox}[column=1,below=auto,textborder=rounded]{ALU control lines}
 \begin{tabular}{|c|c|}
 \hline
 ALU control lines & Function\\\hline
@@ -95,7 +73,6 @@ ALU control lines & Function\\\hline
 0111 & set on less than\\\hline
 1100 & NOR\\\hline
 \end{tabular}
-\end{center}
 \end{posterbox}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%END POSTER
