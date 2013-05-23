@@ -1,5 +1,7 @@
 \documentclass[landscape,fontscale=1,margin=0.2cm,paperwidth=60truecm, paperheight=34truecm,debug]{baposter}
 \usepackage{multirow}
+\usepackage{listings}
+
 \begin{document}
 
 \begin{poster}{
@@ -20,6 +22,9 @@
 }{}{\Large{\color{white}{Single Cycle Datapath}}}{}{d}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{posterbox}[column=0]{Instruction}
+\lstinputlisting[language=Assembler]{code.asm}
+\end{posterbox}
 \begin{posterbox}[column=0,textborder=rounded]{I-Type instruction classes}
 \begin{center}
 \begin{tabular}{|c|c|c|c|}
