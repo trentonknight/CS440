@@ -1,9 +1,9 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012) (format=pdflatex 2013.5.16)  23 MAY 2013 14:54
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012) (format=pdflatex 2013.5.16)  23 MAY 2013 15:48
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**JNMansfield-Datapath.tex
-(./JNMansfield-Datapath.tex
+**JNMansfield-CS440-WK3.tex
+(./JNMansfield-CS440-WK3.tex
 LaTeX2e <2011/06/27>
 Babel <v3.8m> and hyphenation patterns for english, dumylang, nohyphenation, ge
 rman-x-2012-05-30, ngerman-x-2012-05-30, afrikaans, ancientgreek, ibycus, arabi
@@ -528,8 +528,8 @@ Header border: none
 ) (/usr/local/texlive/2012/texmf-dist/tex/latex/multirow/multirow.sty
 \bigstrutjot=\dimen169
 )
-(./JNMansfield-Datapath.aux)
-\openout1 = `JNMansfield-Datapath.aux'.
+(./JNMansfield-CS440-WK3.aux)
+\openout1 = `JNMansfield-CS440-WK3.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 3.
 LaTeX Font Info:    ... okay on input line 3.
@@ -652,120 +652,7 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <7> on input line 20.
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <5> on input line 20.
-Poster box options: column=0
-Setting Coordinates
-Upper Right
-noname
-Fixed
-Lower Left
-Above=not set
-height=auto or fixed
-Fixing Coordinates
-Header-Shade: Plain
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Header
-Header-Shape: smallrounded, header-border: none(2)
-Missing character: There is no ; in font nullfont!
-Poster boxes
-Drawing Text
-Poster box options: column=0,below=auto,textborder=rounded
-Text border: rounded
-<fetchExCycle.png, id=20, 352.44975pt x 788.56183pt>
-File: fetchExCycle.png Graphic file (type png)
- <use fetchExCycle.png>
-Package pdftex.def Info: fetchExCycle.png used on input line 35.
-(pdftex.def)             Requested size: 176.22444pt x 394.27995pt.
-
-Setting Coordinates
-Upper Right
-noname
-Box nonamehas below=auto, placing it below box noname.
-Below
-Lower Left
-Above=not set
-height=auto or fixed
-Fixing Coordinates
-Header-Shade: Plain
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Header
-Header-Shape: smallrounded, header-border: none(2)
-Missing character: There is no ; in font nullfont!
-Poster boxes
-Drawing Text
-Poster box options: column=1
-Setting Coordinates
-Upper Right
-noname
-Fixed
-Lower Left
-Above=not set
-height=auto or fixed
-Fixing Coordinates
-Header-Shade: Plain
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Header
-Header-Shape: smallrounded, header-border: none(2)
-Missing character: There is no ; in font nullfont!
-Poster boxes
-Drawing Text
-Poster box options: column=1,below=auto
-Setting Coordinates
-Upper Right
-noname
-Box nonamehas below=auto, placing it below box noname.
-Below
-Lower Left
-Above=not set
-height=auto or fixed
-Fixing Coordinates
-Header-Shade: Plain
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Header
-Header-Shape: smallrounded, header-border: none(2)
-Missing character: There is no ; in font nullfont!
-Poster boxes
-Drawing Text
-Poster box options: column=1,below=auto
-Setting Coordinates
-Upper Right
-noname
-Box nonamehas below=auto, placing it below box noname.
-Below
-Lower Left
-Above=not set
-height=auto or fixed
-Fixing Coordinates
-Header-Shade: Plain
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Header
-Header-Shape: smallrounded, header-border: none(2)
-Missing character: There is no ; in font nullfont!
-Poster boxes
-Drawing Text
-Poster box options: column=1,below=auto
-Setting Coordinates
-Upper Right
-noname
-Box nonamehas below=auto, placing it below box noname.
-Below
-Lower Left
-Above=not set
-height=auto or fixed
-Fixing Coordinates
-Header-Shade: Plain
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Header
-Header-Shape: smallrounded, header-border: none(2)
-Missing character: There is no ; in font nullfont!
-Poster boxes
-Drawing Text
-Poster box options: column=2,textborder=rounded
+Poster box options: column=0,textborder=rounded
 Text border: rounded
 Setting Coordinates
 Upper Right
@@ -783,7 +670,7 @@ Header-Shape: smallrounded, header-border: none(2)
 Missing character: There is no ; in font nullfont!
 Poster boxes
 Drawing Text
-Poster box options: column=3,textborder=rounded
+Poster box options: column=1,textborder=rounded
 Text border: rounded
 Setting Coordinates
 Upper Right
@@ -803,26 +690,24 @@ Poster boxes
 Drawing Text
 [2
 
-{/usr/local/texlive/2012/texmf-var/fonts/map/pdftex/updmap/pdftex.map} <./fetch
-ExCycle.png>] (./JNMansfield-Datapath.aux) ) 
+{/usr/local/texlive/2012/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
+(./JNMansfield-CS440-WK3.aux) ) 
 Here is how much of TeX's memory you used:
- 12756 strings out of 493481
- 257038 string characters out of 3140986
- 341629 words of memory out of 3000000
- 15794 multiletter control sequences out of 15000+200000
- 8260 words of font info for 20 fonts, out of 3000000 for 9000
+ 12732 strings out of 493481
+ 256507 string characters out of 3140986
+ 314010 words of memory out of 3000000
+ 15772 multiletter control sequences out of 15000+200000
+ 7496 words of font info for 19 fonts, out of 3000000 for 9000
  957 hyphenation exceptions out of 8191
- 63i,12n,70p,452b,1181s stack positions out of 5000i,500n,10000p,200000b,50000s
-{/usr/local/texlive/2012/texmf-dist
-/fonts/enc/dvips/cm-super/cm-super-t1.enc}</usr/local/texlive/2012/texmf-dist/f
-onts/type1/public/cm-super/sfbx1000.pfb></usr/local/texlive/2012/texmf-dist/fon
-ts/type1/public/cm-super/sfbx1440.pfb></usr/local/texlive/2012/texmf-dist/fonts
-/type1/public/cm-super/sfrm1000.pfb></usr/local/texlive/2012/texmf-dist/fonts/t
-ype1/public/cm-super/sfrm1200.pfb>
-Output written on JNMansfield-Datapath.pdf (1 page, 183195 bytes).
+ 63i,12n,70p,453b,936s stack positions out of 5000i,500n,10000p,200000b,50000s
+{/usr/local/texlive/2012/texmf-dist/fonts/enc/dv
+ips/cm-super/cm-super-t1.enc}</usr/local/texlive/2012/texmf-dist/fonts/type1/pu
+blic/cm-super/sfbx1440.pfb></usr/local/texlive/2012/texmf-dist/fonts/type1/publ
+ic/cm-super/sfrm1000.pfb>
+Output written on JNMansfield-CS440-WK3.pdf (1 page, 32262 bytes).
 PDF statistics:
- 47 PDF objects out of 1000 (max. 8388607)
- 21 compressed objects within 1 object stream
+ 36 PDF objects out of 1000 (max. 8388607)
+ 14 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 114 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 109 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -83,7 +83,21 @@ add & \$17 & \$18 & \$9 & N/A & 32\\\hline
 \end{tikzpicture}
 \end{center}
 \end{posterbox}
-\begin{posterbox}[column=2,textborder=rounded]{ALU control lines}
+\begin{posterbox}[column=2,textborder=rounded]{I-Type instruction classes}
+\begin{center}
+\begin{tabular}{|c|c|c|c|}
+\hline
+opcode & rs & rt & memory address offset\\\hline\hline
+lw & \$17 & \$8 & 8\\\hline
+100011 & 10001& 01000 & 0000 0000 0000 1000\\\hline\hline
+sw & \$20 & \$16 & 44\\\hline
+101011 & 10100 & 10000 & 0000 0000 0010 1100\\\hline
+\end{tabular}
+\\
+
+\end{center}
+\end{posterbox}
+\begin{posterbox}[column=3,textborder=rounded]{ALU control lines}
 \begin{center}
 \begin{tabular}{|c|c|}
 \hline

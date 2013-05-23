@@ -1,0 +1,55 @@
+\documentclass[landscape,fontscale=1,margin=0.2cm,paperwidth=60truecm, paperheight=34truecm,debug]{baposter}
+\usepackage{multirow}
+\begin{document}
+
+\begin{poster}{
+  headerheight=60pt,
+  columns=4,
+  background=plain,
+%   linewidth=0.5pt,
+  borderColor=orange!70,
+  textborder=rectangle,
+  headershade=plain,
+  headerColorOne=orange!80,
+  headershape=smallrounded,
+  boxheaderheight=1.5em,
+  headerfont={},
+  boxColorOne=white,
+  bgColorOne=darkgray,
+  bgColorTwo=blue!60,
+}{}{\Large{\color{white}{Single Cycle Datapath}}}{}{d}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{posterbox}[column=0,textborder=rounded]{I-Type instruction classes}
+\begin{center}
+\begin{tabular}{|c|c|c|c|}
+\hline
+opcode & rs & rt & memory address offset\\\hline\hline
+sw & \$19 & \$17 & 22\\\hline
+& \$s3 & \$s1&\\\hline
+101011 & 10110 & 10110 & 0000 0000 0001 0110\\\hline
+\end{tabular}
+
+\end{center}
+\end{posterbox}
+\begin{posterbox}[column=1,textborder=rounded]{ALU control lines}
+\begin{center}
+\begin{tabular}{|c|c|}
+\hline
+ALU control lines & Function\\\hline
+0000 & AND\\\hline
+0001 & OR\\\hline
+0010 & add\\\hline
+0110 & subtract\\\hline
+0111 & set on less than\\\hline
+1100 & NOR\\\hline
+\end{tabular}
+\end{center}
+\end{posterbox}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%END POSTER
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\end{poster}
+
+\end{document}
+
