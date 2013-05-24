@@ -1,12 +1,66 @@
-\documentclass[landscape,fontscale=1,margin=0.2cm,paperwidth=60truecm, paperheight=34truecm,debug]{baposter}
+\documentclass[landscape,fontscale=1,margin=0.2cm,paperwidth=50truecm, paperheight=34truecm,debug]{baposter}
 \usepackage{multirow}
 \usepackage{listings}
+\usepackage{mips}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\definecolor{mygreen}{rgb}{0,0.6,0}
+\definecolor{mygray}{rgb}{0.5,0.5,0.5}
+\definecolor{mymauve}{rgb}{0.58,0,0.82}
 
+\lstset{ %
+  backgroundcolor=\color{white},   % choose the background color; you must add \usepackage{color} or \usepackage{xcolor}
+  basicstyle=\footnotesize,        % the size of the fonts that are used for the code
+  breakatwhitespace=false,         % sets if automatic breaks should only happen at whitespace
+  breaklines=true,                 % sets automatic line breaking
+  captionpos=b,                    % sets the caption-position to bottom
+  commentstyle=\color{mygreen},    % comment style
+  deletekeywords={...},            % if you want to delete keywords from the given language
+  escapeinside={\%*}{*)},          % if you want to add LaTeX within your code
+  extendedchars=true,              % lets you use non-ASCII characters; for 8-bits encodings only, does not work with UTF-8
+  frame=single,                    % adds a frame around the code
+  keepspaces=true,                 % keeps spaces in text, useful for keeping indentation of code (possibly needs columns=flexible)
+  keywordstyle=\color{blue},       % keyword style
+  language=Octave,                 % the language of the code
+  morekeywords={*,...},            % if you want to add more keywords to the set
+  numbers=left,                    % where to put the line-numbers; possible values are (none, left, right)
+  numbersep=5pt,                   % how far the line-numbers are from the code
+  numberstyle=\tiny\color{mygray}, % the style that is used for the line-numbers
+  rulecolor=\color{black},         % if not set, the frame-color may be changed on line-breaks within not-black text (e.g. comments (green here))
+  showspaces=false,                % show spaces everywhere adding particular underscores; it overrides 'showstringspaces'
+  showstringspaces=false,          % underline spaces within strings only
+  showtabs=false,                  % show tabs within strings adding particular underscores
+  stepnumber=2,                    % the step between two line-numbers. If it's 1, each line will be numbered
+  stringstyle=\color{mymauve},     % string literal style
+  tabsize=2,                       % sets default tabsize to 2 spaces
+  title=\lstname                   % show the filename of files included with \lstinputlisting; also try caption instead of title
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%TIKZ themes
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\tikzstyle{block} = [rectangle, draw, fill=brown!20, 
+    text width=6em, text centered, rounded corners, drop shadow, minimum height=6em]
+\tikzstyle{block2} = [rectangle, draw, fill=orange!20, 
+    text width=2em, text centered, rounded corners, drop shadow,minimum height=3em]
+\tikzstyle{line} = [draw, -latex']
+\tikzstyle{mux} = [ trapezium,   draw,   
+                    shape border rotate = 270, trapezium angle = 60,  
+                    inner ysep=0pt, outer sep=1pt, inner xsep=1pt, 
+                    text width = 3em, 
+                    node distance=3cm, drop shadow, fill=gray!10]
+\tikzstyle{eli} = [ellipse, draw, fill=blue!10, anchor=north, drop shadow, rotate=90, minimum height=5em, minimum width=10em]
+\tikzstyle{eli2} = [ellipse, draw, fill=orange!10, anchor=north, drop shadow, rotate=90, minimum height=1.5em, minimum width=2em]
+\def\alu#1#2{
+\begin{scope}[shift={#1}, rotate=#2]
+    \draw [fill=red!10, drop shadow](0,0) -- (1,0) -- (2,1.5) -- (1.25,1.5) -- (.5,.7) -- (-.25,1.5) -- (-1,1.5) -- cycle;
+\end{scope}
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{document}
 
 \begin{poster}{
   headerheight=60pt,
-  columns=4,
+  columns=3,
   background=plain,
 %   linewidth=0.5pt,
   borderColor=orange!70,
@@ -19,25 +73,56 @@
   boxColorOne=white,
   bgColorOne=darkgray,
   bgColorTwo=blue!60,
-}{}{\Large{\color{white}{Single Cycle Datapath}}}{}{d}
+}{}{\Large{\color{white}{Single Cycle Datapath with MIPS instruction sw}}}{}{d}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{posterbox}[column=0]{Instruction}
-\lstinputlisting[language=Assembler]{code.asm}
+\begin{posterbox}[column=0]{Instruction sw}
+The below snippet of code gives you a generic idea of the use of the instruction sw. I will try and step through the datapath in the surrounding columns by breaking down some of the details. 
+\begin{center}
+\lstset{language=[mips]Assembler}
+\lstinputlisting{code.asm}
+\end{center}
 \end{posterbox}
-\begin{posterbox}[column=0,textborder=rounded]{I-Type instruction classes}
+\begin{posterbox}[column=0,below=auto,textborder=rounded]{I-Type instruction classes}
 \begin{center}
 \begin{tabular}{|c|c|c|c|}
 \hline
 opcode & rs & rt & memory address offset\\\hline\hline
-sw & \$19 & \$17 & 22\\\hline
+sw & \$19 & \$17 & 0\\\hline
 & \$s3 & \$s1&\\\hline
-101011 & 10110 & 10110 & 0000 0000 0001 0110\\\hline
+101011 & 10011 & 10001 & 0000 0000 0000 0000\\\hline
+\end{tabular}
+\end{center}
+\end{posterbox}
+\begin{posterbox}[column=0,below=auto,textborder=rounded]{I-Type instruction}
+Please notice in the SPIM simulation located in the top, second column of this file. You can see where \textbf{sw} is executed and that it is a match for the base 16 result shown in the cells below. 
+\begin{center}
+\begin{tabular}{|c|c|}
+\hline
+Number & Base\\\hline
+10101110011100010000000000000000 & in base 2\\\hline
+2926641152 & in base 10\\\hline
+0xae710000 & in base 16\\\hline
 \end{tabular}
 
 \end{center}
 \end{posterbox}
-\begin{posterbox}[column=1,textborder=rounded]{ALU control lines}
+\begin{posterbox}[column=0,textborder=rounded,below=auto]{Register File}
+\begin{center}
+\begin{tabular}{|c|c|c|}\hline
+rs& rt & memory address offset\\\hline
+10011 & 10001 & 0000 0000 0000 0000\\\hline
+Inst[25-21] & Inst[20-16] & Inst[15-0]\\\hline
+Read Register 1 & Read Register 2 & Sign Extension Unit\\\hline
+base address in memory & & 32 bit extended value\\\hline
+& ALUsrc 0 & ALUsrc 1\\\hline
+1st Operand&Write Data&2nd Operand\\\hline
+\end{tabular}
+\end{center}
+I used 0 as an offset so even though the 1st Operand and 2nd Operand are being added the address is not changed. Regardless the MemWrite should be 1, meaning write to memory and the write data "word = 17" to the summed rs and memory address offset: 10011.
+\end{posterbox}
+\begin{posterbox}[column=0,below=auto,textborder=rounded]{ALU control lines}
+sw has the ALUOp 00 and the desired ALU action is add or 0010.
 \begin{center}
 \begin{tabular}{|c|c|}
 \hline
@@ -50,6 +135,74 @@ ALU control lines & Function\\\hline
 1100 & NOR\\\hline
 \end{tabular}
 \end{center}
+\end{posterbox}
+\begin{posterbox}[column=1,textborder=rounded]{SPIM}
+This is just an example of the addresses being used for each instruction including \textbf{sw $17, 0($19)} as you can see, with the exception of the \textbf{jal} instruction, the address is incremented by four each instruction. I believe this would mean \textbf{PCSrc} recieves a branch target control signal or \textbf{1}, for the \textbf{jal} instruction, while all the other instructions in this code including \textbf{sw} would instead be \textbf{0} and therefore \textbf{PC + 4}. The line you are looking for below is:\\
+\textbf{[0x00400028]	0xae710000  sw $17, 0($19)                  ; 9: sw $s1, 0($s3)}\\
+Here is the printout of stepping through the aforementioned code using SPIM:\\
+\begin{lstlisting}
+[0x00400000]	0x8fa40000  lw $4, 0($29)                   ; 183: lw $a0 0($sp)		# argc
+(spim) s
+[0x00400004]	0x27a50004  addiu $5, $29, 4                ; 184: addiu $a1 $sp 4		# argv
+(spim) s
+[0x00400008]	0x24a60004  addiu $6, $5, 4                 ; 185: addiu $a2 $a1 4		# envp
+(spim) s
+[0x0040000c]	0x00041080  sll $2, $4, 2                   ; 186: sll $v0 $a0 2
+(spim) s
+[0x00400010]	0x00c23021  addu $6, $6, $2                 ; 187: addu $a2 $a2 $v0
+(spim) s
+[0x00400014]	0x0c100009  jal 0x00400024 [main]           ; 188: jal main
+(spim) s
+[0x00400024]	0x3c131001  lui $19, 4097 [numOne]          ; 8: la $s3, numOne
+(spim) s
+[0x00400028]	0xae710000  sw $17, 0($19)                  ; 9: sw $s1, 0($s3) 
+(spim) s
+[0x0040002c]	0x3402000a  ori $2, $0, 10                  ; 12: li $v0, 10
+(spim) s
+[0x00400030]	0x0000000c  syscall                         ; 13: syscall
+\end{lstlisting}
+\end{posterbox}
+\begin{posterbox}[column=1,below=auto]{4 bytes long}
+The following python code shows how each hexidecimal location listed in the above SPIM simulation is incremented by \textbf{PC + 4} in decimal numbers, with the exception of the branched instruction \textbf{jal} which branched \textbf{16 bits} or \textbf{(4 * 4bit)} increments. I'm assuming the \textbf{jal} instruction is used when \textbf{main} begins in SPIM.  
+\lstset{language=python}
+\lstinputlisting{4bytes.py}
+4194304\\
+4194308\\
+4194312\\
+4194316\\
+4194320\\
+4194324\\
+la \$s3, numOne:\\
+4194340\\
+sw \$s1, 0(\$s3):\\
+4194344\\
+4194348\\
+4194352\\
+\end{posterbox}
+\begin{posterbox}[column=2]{Single Cycle Datapath}
+\begin{tikzpicture}
+\node[block2](PC) at (-1,0){PC};
+\node[block] (Instruction) at (1,0) {Instruction Memory};
+\node[block] (Register File) at (7,0) {Register File};
+\node[block] (Data Memory) at (13,-3) {Data Memory};
+\alu{(1.5,5)}{90};
+\node(add1)at (1.1,5.5){Add};
+\alu{(11,4.5)}{90};
+\node(add2)at (10.6,5){Add};
+\alu{(11,-2.5)}{90};
+\node(alu)at (10.6,-2){\scriptsize{ALU}};
+\node[eli](Control) at (3,3){Control};
+\node[mux](mux4) at (4.5,-1){mux 4};
+\node[mux](mux1) at (8,-2.5){mux 1};
+\node[mux](mux3) at (14,0){mux 3};
+\node[mux](mux2) at (14,4.5){mux 2};
+\node[eli2](sign) at (6,-2.5){sign ext};
+\node[eli2](aluCtrl) at (8.7,-5){alu ctrl};
+\node[eli2](shiftl) at (8,4){shift l};
+%%%%%%%
+%%paths
+\path [line](PC) -- (Instruction);
+\end{tikzpicture}
 \end{posterbox}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%END POSTER
